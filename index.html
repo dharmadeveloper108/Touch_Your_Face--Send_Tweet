@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="em">
+<head>
+    <meta charset="UTF-8">
+    <title>Touch your Face - Post Cringe Tweet</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+    <!-- Load BodyPix -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<div id="main">
+    <div id="dialog">
+    <p id="dialogText"></p>
+    <button id="ok">OK...</button></div>
+    <video id="myVid" autoplay playsinline></video>
+    <div id="content">
+        <h1>Touch your Face => Post Cringe Tweet</h1>
+        <p>
+            Train your monkey brain to stop your hands from touching your face. 🙊<br>
+            Basically, if you touch your face, a Twitter bot 🤖 I made posts a random tweet from a <i>*chef kiss*</i> 👌 fine 
+            selection of embarassing posts. <br>Took me waaayyyy to long to write them. I apologize for the trash content. 
+            <br>I hope you enjoy the finesse of some of them. 
+        </p>
+        <button id="start">Start monitoring</button>
+        <div id="usageNoteMain">
+            <h4>Usage notes</h4>
+            <p> Keep this tab in the foreground for the best performance.
+                This works best on Chrome and has been tested in the new Edge and Firefox.
+                Doesn't work with Safari yet.
+                It usually does not detect as well if you are very close to the camera.
+                It will not work well on slower devices or mobile.</p>
+            <h4>⚠️ Warning ⚠️</h4>
+            <p id="warning">
+            The detector has no depth perception, so a hand in front of your face will set it off.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="loader"></div> 
+<div id="dashboard">
+    <div id="dashboardContent">
+        <h3>Statistics</h3>
+        <p>Status: <span id="userMessage">Click to the left to activate your webcam.</span></p>
+        <div id="statsDiv" hidden>
+            <p>Face touches:  <span id="touches"></span></p>
+            <p>Last touch:  <span id="lastTouch"></span></p>
+            <p>Touch rate per hour: <span id="perHour"></span></p>
+            <p>FPS: <span id="fps"></span></p>
+        </div>
+        <h3>Controls</h3>
+        <div id="controls">
+            <p>Trade off speed for accuracy:</p>
+            <button id="highSpeed" disabled>Faster</button>
+            <button id="normalSpeed" disabled>Normal</button>
+            <button id="lowerSpeed" disabled>More accurate</button>
+            <button id="lowSpeed" disabled>Most accurate</button>
+            <button id="reset">Exit / Restart</button>
+            <div id="usageNoteSide"></div>
+        </div>
+    </div>
+</div>
+<div id="credits">
+<div id="creditContent">
+    <h4>Credits:</h4>
+    <p>Originally forked from a <a href="https://github.com/webrtchacks/facetouchmonitor">Github repo</a> 
+        by <a href="https://webrtcHacks.com">webrtcHacks</a>.
+        Powered by <a href="https://github.com/tensorflow/tfjs">tensorflow.js</a>.<br>
+        <a href="https://github.com/webrtchacks/facetouchmonitor">GitHub repo</a> of this version
+        made to trigger the <a href="https://github.com/dharmadeveloper108/cringe_tweet_bot">cringe tweet bot</a>.
+    </p> 
+</div>
+</div>
+<script src="ui-helper.js"></script>
+<script src="detect_face_touch.js"></script>
+</body>
+</html>
