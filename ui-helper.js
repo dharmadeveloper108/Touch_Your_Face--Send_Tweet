@@ -28,7 +28,6 @@ slowButton.disabled = true;
 
 const videoWidth = sourceVideo.offsetWidth;
 const videoHeight = sourceVideo.offsetHeight;
-sourceVideo.style.filter = "blur(0.5rem)";
 
 // Get video camera
 function handleSuccess(stream) {
@@ -72,7 +71,6 @@ function enableDashboard(initial=false) {
     userMessage.innerText = "Monitor running";
     showStats.hidden = false;
     loader.style.display = "none";
-    sourceVideo.style.filter = "blur(0)";
 
     startTime = new Date().getTime();
 
